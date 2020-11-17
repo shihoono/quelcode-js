@@ -1,2 +1,2 @@
 # quelcode-js
-JavaScript 課題②
+JavaScript 課題

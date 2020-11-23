@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap">
+    <title>js-weather</title>
+</head>
+<body>
+    <div class="container">
+        <h1>今日のお天気</h1>
+        <p>都市を選択してください</p>
+        <select name="city" id="city">
+            <option value="London" selected>ロンドン</option>
+            <option value="Tokyo">東京</option>
+            <option value="Paris">パリ</option>
+            <option value="New York">ニューヨーク</option>
+            <option value="Indonesia">インドネシア</option>
+        </select>
+        <div class="show-weather">
+            <h2 id="result"></h2>
+            <h2 id="selectedCity"></h2>
+            <div id="weather"></div>
+            <div id="weather-icon"></div>
+            <div id="temperature"></div>
+        </div>
+    </div>
+    <script src="js-weather.js"></script>
+</body>
+</html>

@@ -2,27 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const targetCity = document.getElementById('city');
   const appId = '4b5774e9f3d2a07b84f0f2f88e486224';
 
-  // ロンドンの天気表示
-  const requestUrl = 'https://api.openweathermap.org/data/2.5/weather?APPID=' + appId + '&lang=ja&units=metric&q=London,jp;';
-
-  const result = document.getElementById('result');
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', requestUrl);
-  xhr.send();
-
-  xhr.addEventListener('loadstart', () => {
-    result.textContent = '通信中...';
-  }, false);
-
-  xhr.addEventListener('load', () => {
-    showTodaysWeather(xhr.responseText);
-  }, false);
-
-  xhr.addEventListener('error', () => {
-    result.textContent = 'サーバーエラーが発生しました。';
-  }, false);
-
-  targetCity.addEventListener('change', () => {
+  const WeatherGetAsync = () => {
     const cityName = targetCity.value;
     const requestUrl = 'https://api.openweathermap.org/data/2.5/weather?APPID=' + appId + '&lang=ja&units=metric&q=' + cityName + ',jp;';
 
@@ -42,7 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     xhr.addEventListener('error', () => {
       result.textContent = 'サーバーエラーが発生しました。';
     }, false);
-  }, false);
+  }
+    
+  WeatherGetAsync();
+  targetCity.addEventListener('change', WeatherGetAsync);
+
 }, false);
 
 function showTodaysWeather(response){

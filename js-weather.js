@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, false);
   }
     
-  async();
+  getWeatherAsync();
   targetCity.addEventListener('change', getWeatherAsync);
 
 }, false);

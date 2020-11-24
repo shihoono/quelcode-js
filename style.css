@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+body {
+    background-color: #e3f6f5;
+}
+
+.container {
+    text-align: center;
+    padding: 100px;
+    color: #2d334a;
+}
+
+.container h1 {
+    margin-bottom: 40px;
+}
+
+.container p {
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 7px 30px 7px 10px;
+    margin-bottom: 30px;
+    line-height: 1.1em;
+    border-radius: 5px;
+    border: 2px solid #2d334a;
+    background-image: url(./icon_arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 12px 10px;
+    background-position: right 10px center;
+    background-color: #ffd803;
+}
+
+#selectedCity {
+    margin-bottom: 10px;
+}
+
+#weather {
+    font-size: 20px;
+}
+
+#weather-icon img {
+    width: 60px;
+    height: 60px;
+}

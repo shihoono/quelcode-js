@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false);
 
-function showTodaysWeather(response){
+const showTodaysWeather = (response) => {
   const obj = JSON.parse(response);
 
   const city = obj.name;
@@ -76,6 +76,6 @@ function showTodaysWeather(response){
   }
 }
 
-function escapeHtml(str) {
+const escapeHtml = (str) => {
   return str.toString().replace(/^\s+|\s+$/g,'');
 }

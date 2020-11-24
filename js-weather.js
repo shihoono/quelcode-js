@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const targetCity = document.getElementById('city');
   const appId = '4b5774e9f3d2a07b84f0f2f88e486224';
 
-  const WeatherGetAsync = () => {
+  const getWeatherAsync = () => {
     const cityName = targetCity.value;
     const requestUrl = 'https://api.openweathermap.org/data/2.5/weather?APPID=' + appId + '&lang=ja&units=metric&q=' + cityName + ',jp;';
 
@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, false);
   }
     
-  WeatherGetAsync();
-  targetCity.addEventListener('change', WeatherGetAsync);
+  async();
+  targetCity.addEventListener('change', getWeatherAsync);
 
 }, false);
 

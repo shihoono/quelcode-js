@@ -14,39 +14,8 @@ const showTodaysWeather = (response) => {
   const temperature = obj.main.temp;
   document.getElementById('temperature').innerHTML = `<span>${escapeHtml(temperature)}℃</span>`;
 
-  switch(obj.weather[0].main){
-    case 'Clouds':
-      document.getElementById('weather-icon').innerHTML = "<img src='http://openweathermap.org/img/w/04d.png' >";
-    break;
-
-    case 'Snow':
-      document.getElementById('weather-icon').innerHTML = "<img src='http://openweathermap.org/img/w/13d.png' >";
-    break;
-
-    case 'Rain':
-      document.getElementById('weather-icon').innerHTML = "<img src='http://openweathermap.org/img/w/09d.png' >";
-    break;
-
-    case 'Clear':
-      document.getElementById('weather-icon').innerHTML = "<img src='http://openweathermap.org/img/w/01d.png' >";
-    break;
-
-    case 'Fog':
-      document.getElementById('weather-icon').innerHTML = "<img src='http://openweathermap.org/img/w/50d.png' >";
-    break;
-
-    case 'Mist':
-      document.getElementById('weather-icon').innerHTML = "<img src='http://openweathermap.org/img/w/50n.png' >";
-    break;
-
-    case 'Haze':
-      document.getElementById('weather-icon').innerHTML = "<img src='http://openweathermap.org/img/w/50d.png' >";
-    break;
-
-    default:
-      document.getElementById('weather-icon').innerHTML = "<img src='http://openweathermap.org/img/w/01n.png' >";
-    break;
-  }
+  const weatherIcon = obj.weather[0].icon;
+  document.getElementById('weather-icon').innerHTML = `<img src='http://openweathermap.org/img/w/${escapeHtml(weatherIcon)}.png' >`;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
